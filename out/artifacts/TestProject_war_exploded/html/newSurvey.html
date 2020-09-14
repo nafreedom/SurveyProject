@@ -1,0 +1,86 @@
+<div class="surveyAlert"></div>
+<div id="newSurveyArea">
+    <form id="surveyForm" name="surveyForm" method="post">
+        <div id="newSurveyMenuArea">
+            <input type="button" name="saveSurvey_btn" id="saveSurvey_btn" value="저장하기">
+            <input type="button" name="addQuestion_btn" id="addQuestion_btn" value="질문 추가">
+            <input type="button" name="deleteQuestion_btn" id="deleteQuestion_btn" value="질문 삭제">
+            <input type="button" name="labelDialog_btn" id="labelDialog_btn" value="사전질문 추가">
+            <input type="button" name="addOption_btn" id="addOption_btn" value="선택지 추가" disabled>
+            <input type="button" name="deleteOption_btn" id="deleteOption_btn" value="선택지 삭제" disabled>
+        </div>
+
+        <div id="addQuestionArea">
+                <h2>설문조사 생성하기</h2>
+                <b>설문조사 제목 : </b><p/>
+                <input type="text" id="title" name="title" placeholder="제목을 입력하세요"><p>
+                <b>설문조사 소개 : </b><p/>
+                <input type="text" id="expl" name="expl" placeholder="설문조사에 대한 간략한 소개를 입력하세요"><p>
+                <b>설문조사 마감일 : </b><p/>
+                <input type="datetime-local" id="endTime" name="endTime" step="1"><p>
+                <input type="hidden" id="creatorId" name="creatorId">
+                <input type="hidden" id="url" name="url">
+                <div id="aQDAnswerSheetArea"></div>
+        </div>
+    </form>
+</div>
+
+<div id="addQuestion_dialog">
+    <div id="addQuestion_dialogContent">
+        <form name="addQuestionForm" id="addQuestionForm">
+            <b class="dialogTitle">질문을 추가하세요</b>
+            <hr>
+            <input type="text" name="questionValue" placeholder="질문을 입력해주세요"><p/>
+            <hr>
+            <b>응답 유형</b><p/>
+            <label for="checkboxType">
+                <input type="radio" name="answerType" id="checkboxType" value="checkbox" checked>다중 선택지
+            </label><p/>
+            <label for="radioType">
+                <input type="radio" name="answerType" id="radioType" value="radio">단일 선택지
+            </label><p/>
+            <label for="textType">
+                <input type="radio" name="answerType" id="textType" value="text">주관식
+            </label><p/>
+<!--            <label for="imgType">-->
+<!--                <input type="radio" name="answerType" id="imgType" value="img">이미지-->
+<!--            </label><p/>-->
+            <hr>
+            <input type="button" id="addQuestionConfirm_btn" name="addQuestionConfirm_btn" value="추가하기">
+            <input type="button" id="addQuestionCancel_btn" name="addQuestionCancel_btn" value="취소하기">
+        </form>
+    </div>
+</div>
+
+<div id="deleteQuestion_dialog">
+    <div id="deleteQuestion_dialogContent">
+        <form name="deleteQuestionForm" id="deleteQuestionForm">
+            <b class="dialogTitle">삭제할 질문을 선택하세요</b>
+            <hr>
+            <div id="deleteQuestionList"></div>
+            <hr>
+            <input type="button" id="deleteQuestionConfirm_btn" name="deleteQuestionConfirm_btn" value="삭제하기">
+            <input type="button" id="deleteQuestionCancel_btn" name="deleteQuestionCancel_btn" value="취소하기">
+        </form>
+    </div>
+</div>
+
+<div id="addLabel_dialog">
+    <div id="addLabel_dialogContent">
+        <form name="addLabelForm" id="addLabelForm">
+            <b class="dialogTitle">사전질문 추가</b><p/>
+            <hr>
+            <input type="button" name="addLabel_btn" id="addLabel_btn" value="문항 추가">
+            <input type="button" name="deleteLabel_btn" id="deleteLabel_btn" value="문항 삭제" disabled>
+            <input type="button" name="addLabelOption_btn" id="addLabelOption_btn" value="선택지 추가" disabled>
+            <input type="button" name="deleteLabelOption_btn" id="deleteLabelOption_btn" value="선택지 삭제" disabled>
+            <input type="hidden" name="addUserId" id="addUserId">
+            <input type="hidden" name="addTitle" id="addTitle">
+            <hr>
+            <div id="labelArea"></div>
+            <hr>
+            <input type="button" id="labelDialogConfirm_btn" name="labelDialogConfirm_btn" value="추가하기">
+            <input type="button" id="labelDialogCancel_btn" name="labelDialogCancel_btn" value="취소하기">
+        </form>
+    </div>
+</div>

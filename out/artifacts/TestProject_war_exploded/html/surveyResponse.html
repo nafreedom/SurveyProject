@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>설문조사 응답페이지</title>
+    <script type="module" src="/js/response.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/response.css">
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
+</head>
+<body>
+<a href="index.html">
+    <img id="logo" src="/img/logo.png">
+</a>
+<form name="surveyResponseForm" id="surveyResponseForm" method="post">
+    <div id="surveyResponseArea">
+        <div id="responseTitle"></div><p/>
+        <div id="expl"></div><p/>
+        <div id="endTime"></div><p/>
+
+        <input type="hidden" name="title">
+        <input type="hidden" name="creatorId">
+        <input type="hidden" name="ipAddr" id="ipAddr">
+    </div>
+    <div class="surveyAlert"></div>
+    <input type="button" name="saveSurveyResponse_btn" value="제출하기">
+    <input type="reset" value="다시하기">
+</form>
+
+<div id="responseLabel_dialog">
+    <div id="responseLabel_dialogContent">
+        <form name="responseLabelForm" id="responseLabelForm">
+            <b class="dialogTitle">사전 질문</b><p/>
+            <hr>
+            <div id="responseLabelArea"></div>
+            <hr>
+            <input type="hidden" name="resultSeq" id="resultSeq">
+            <input type="button" id="responseDialogConfirm_btn" name="responseDialogConfirm_btn" value="제출하기">
+        </form>
+    </div>
+    <div class="surveyAlert"></div>
+</div>
+</body>
+</html>

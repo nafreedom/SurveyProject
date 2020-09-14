@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>설문조사 응답페이지</title>
+    <script type="module" src="/js/response.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/response.css">
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
+</head>
+<body>
+<a href="index.html">
+    <img id="logo" src="/img/logo.png">
+</a>
+<form name="surveyResponseForm" id="surveyResponseForm" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
+    <div id="surveyResponseArea">
+        <div id="responseTitle"></div><p/>
+        <div id="expl"></div><p/>
+        <div id="endTime"></div><p/>
+
+        <input type="hidden" name="title">
+        <input type="hidden" name="creatorId">
+        <input type="hidden" name="ipAddr" id="ipAddr">
+        <input type="hidden" name="email" id="email">
+    </div>
+    <div class="surveyAlert"></div>
+    <input type="button" name="saveSurveyResponse_btn" value="제출하기">
+    <input type="reset" value="다시하기">
+</form>
+
+<div id="responseLabel_dialog">
+    <div id="responseLabel_dialogContent">
+        <form name="responseLabelForm" id="responseLabelForm">
+            <b class="dialogTitle">사전 질문</b><p/>
+            <hr>
+            <div id="responseLabelArea"></div>
+            <hr>
+            <input type="hidden" name="resultSeq" id="resultSeq">
+            <input type="button" id="responseDialogConfirm_btn" name="responseDialogConfirm_btn" value="제출하기">
+        </form>
+    </div>
+    <div class="surveyAlert"></div>
+</div>
+
+<div id="emailCert_dialog">
+    <div id="emailCert_dialogContent">
+        <form name="emailCertForm" id="emailCertForm">
+            <b class="dialogTitle" id="surveyTitleTxt"></b>
+            <br><br>
+            <b>이메일과 발급 받은 설문 인증 코드를 입력바랍니다.</b>
+            <br>
+            <b id="emailOpenTxt"></b>
+            <br><br>
+            <input type="text" name="email" placeholder="이메일"/>
+            <input type="button" name="goCert_btn" class="leftBtn double" value="인증하기"/>
+            <input type="text" name="password" placeholder="설문인증코드"/>
+            <br>
+            <hr>
+            <br>
+            해당 설문에 참여를 원하신다면 이메일을 통해 설문 인증 코드를 발급받으시기 바랍니다.
+            <br><br>
+            <input type="text" name="sendEmail" placeholder="설문 인증 코드 수신 이메일"/>
+            <input type="button" name="sendCertEmail_btn" class="leftBtn" value="이메일 전송"/>
+
+            <input type="hidden" name="surveyNum" id="surveyNum"/>
+            <input type="hidden" name="title" id="title"/>
+            <input type="hidden" name="creatorId" id="creatorId"/>
+        </form>
+    </div>
+    <div class="surveyAlert"></div>
+</div>
+
+<div id="loadingLayer">
+</div>
+
+</body>
+</html>

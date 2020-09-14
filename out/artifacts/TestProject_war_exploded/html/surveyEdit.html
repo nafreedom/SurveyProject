@@ -1,0 +1,85 @@
+<div class="surveyAlert"></div>
+<div id="surveyEditArea">
+    <form id="editSurveyForm" name="editSurveyForm">
+        <div id="editSurveyMenuArea">
+            <input type="button" name="saveEditSurvey_btn" id="saveEditSurvey_btn" value="편집하기">
+            <input type="button" name="addEditQuestion_btn" id="addEditQuestion_btn" value="질문 추가">
+            <input type="button" name="deleteEditQuestion_btn" id="deleteEditQuestion_btn" value="질문 삭제">
+            <input type="button" name="editLabelDialog_btn" id="editLabelDialog_btn" value="사전질문 편집">
+            <input type="button" name="addEditOption_btn" id="addEditOption_btn" value="선택지 추가" disabled>
+            <input type="button" name="deleteEditOption_btn" id="deleteEditOption_btn" value="선택지 삭제" disabled>
+        </div><p/>
+
+        <div id="editQuestionArea">
+            <div id="editTitle"></div><p/>
+            <b>설문조사 소개 : </b><p/>
+            <input type="text" id="expl" class="info"><p/>
+            <b> 설문조사 마감일 : </b><p/>
+            <input type="datetime-local" id="endTime" class="info"><p/>
+
+            <div id="surveyEditTbl"></div><p/>
+
+            <input type="hidden" id="title" name="title">
+            <input type="hidden" id="creatorId" name="creatorId">
+            <input type="hidden" name="endTime">
+            <input type="hidden" name="expl">
+            <input type="hidden" id="url" name="url">
+        </div>
+    </form>
+</div>
+
+<div id="addEditQuestion_dialog">
+    <div id="addEditQuestion_dialogContent">
+        <form name="addEditQuestionForm" id="addEditQuestionForm">
+            <b class="dialogTitle">질문을 추가하세요</b><hr>
+            <input type="text" name="question" placeholder="질문을 입력해주세요"><p/>
+            <hr>
+            <b>응답 유형</b><p/>
+            <label for="checkboxType">
+                <input type="radio" name="answerType" id="checkboxType" value="checkbox" checked>다중 선택지
+            </label><p/>
+            <label for="radioType">
+                <input type="radio" name="answerType" id="radioType" value="radio">단일 선택지
+            </label><p/>
+            <label for="textType">
+                <input type="radio" name="answerType" id="textType" value="text">주관식
+            </label><p/>
+            <hr>
+            <input type="button" id="addEditQuestion_submitBtn" name="addEditQuestion_submitBtn" value="confirm">
+            <input type="button" id="addEditQuestion_cancelBtn" name="addEditQuestion_cancelBtn" value="cancel">
+        </form>
+    </div>
+</div>
+
+<div id="deleteEditQuestion_dialog">
+    <div id="deleteEditQuestion_dialogContent">
+        <form name="deleteEditQuestionForm" id="deleteEditQuestionForm">
+            <b class="dialogTitle">삭제할 질문을 선택하세요</b>
+            <hr>
+            <div id="deleteEditQuestionList"></div>
+            <hr>
+            <input type="button" id="deleteEditQuestionConfirm_btn" name="deleteEditQuestionConfirm_btn" value="삭제하기">
+            <input type="button" id="deleteEditQuestionCancel_btn" name="deleteEditQuestionCancel_btn" value="취소하기">
+        </form>
+    </div>
+</div>
+
+<div id="addEditLabel_dialog">
+    <div id="addEditLabel_dialogContent">
+        <form name="addEditLabelForm" id="addEditLabelForm">
+            <b class="dialogTitle">사전질문 추가</b><p/>
+            <hr>
+            <input type="button" name="addEditLabel_btn" id="addEditLabel_btn" value="문항 추가">
+            <input type="button" name="deleteEditLabel_btn" id="deleteEditLabel_btn" value="문항 삭제" disabled>
+            <input type="button" name="addEditLabelOption_btn" id="addEditLabelOption_btn" value="선택지 추가" disabled>
+            <input type="button" name="deleteEditLabelOption_btn" id="deleteEditLabelOption_btn" value="선택지 삭제" disabled>
+            <input type="hidden" name="addUserId" id="addUserId">
+            <input type="hidden" name="addTitle" id="addTitle">
+            <hr>
+            <div id="labelArea"></div>
+            <hr>
+            <input type="button" id="labelEditDialogConfirm_btn" name="labelEditDialogConfirm_btn" value="추가하기">
+            <input type="button" id="labelEditDialogCancel_btn" name="labelEditDialogCancel_btn" value="취소하기">
+        </form>
+    </div>
+</div>

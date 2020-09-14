@@ -1,0 +1,163 @@
+input[type=text], input[type=password], input[type=datetime-local], input[type=date], input[type=time] {
+    width: 70%;
+    line-height: 40px;
+    border: lightblue 1px solid;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+input[type=button], button, input[type=reset] {
+    width: 20%;
+    background-color: lightblue;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    line-height: 40px;
+}
+
+input[type=file]{
+    padding:0 0 15px 10px;
+}
+
+#surveyResponseArea {
+    width: 70%;
+    margin-left: 15%;
+    padding-top: 5%;
+    margin-bottom: 5%;
+}
+
+#responseTitle {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.actualSurveyResponseArea {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+input[name$='TextBox'] {
+    margin-left: 0px;
+    width: 50%;
+}
+input[name=saveSurveyResponse_btn] {
+    margin-left: 30%;
+}
+
+.alertPage {
+    height: 40%;
+    width: 50%;
+    margin-left: 15%;
+    margin-top: 5%;
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 10%;
+    text-align: center;
+}
+
+#moveToIndexH2 {
+    margin-top: 30%;
+    margin-bottom: 5%;
+}
+
+input[name=moveToIndex] {
+    width: 50%;
+    height: 5%;
+}
+
+#responseLabel_dialog, #emailCert_dialog {
+    position:fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+}
+
+#responseLabel_dialogContent, #emailCert_dialogContent {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    height: 350px;
+    margin-left: -250px;
+    margin-top: -200px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.leftBtn{
+    float: right;
+    width: 25% !important;
+    height:53px;
+}
+
+.leftBtn.double{
+    height: 107px;
+}
+
+#responseLabelArea {
+    height: 180px;
+    overflow: auto;
+}
+
+#responseDialogConfirm_btn {
+    margin-left: 35%;
+}
+
+.alert {
+    width: 90%;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 40px;
+}
+
+.alert-success {
+    background-color: lightblue;
+    color: black;
+}
+
+.alert-warning {
+    background-color: orange;
+    color: white;
+}
+
+.alert-error {
+    background-color: darkred;
+    color: white;
+}
+
+p.questionExt {
+    font-size : 0.9rem;
+    padding: 0 0 0 10px;
+}
+
+hr {
+    background-color: lightblue;
+    height: 3px;
+    border: 0px;
+}
+
+#loadingLayer {
+    display: none;
+    position:fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: url("/img/loading.gif") no-repeat 50%/100px rgba(0,0,0,0.4);
+}

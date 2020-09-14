@@ -1,0 +1,392 @@
+/* logo */
+#menuArea #logo {
+    float: right;
+    margin-right: 12%;
+    width: 10%;
+}
+
+input[type=text], input[type=password], input[type=datetime-local], input[type=email] {
+    width: 95%;
+    line-height: 40px;
+    border: lightblue 1px solid;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+input[class$='LabelOption'], input[class='LabelOption'], input[name='LabelOption'], input[name$='LabelOption'] {
+    width: 90%;
+}
+
+input[type=button], button {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: lightblue;
+    outline: none;
+    border: 0;
+    color: rgba(255, 255, 255, 0);
+    width: 80px;
+    line-height: 30px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: center center;
+}
+
+input[name='result_btn'], input[name='delete_btn'] {
+    opacity: 1;
+}
+
+#contentArea input[type=button], #loginForm input[type=button], #surveyListTbl input[type=button], #shareSurvey_dialogContent input[type=button], #labelDialogConfirm_btn, #labelDialogCancel_btn, #labelEditDialogConfirm_btn, #labelEditDialogCancel_btn, #labelEditDialogConfirm_btn, #labelEditDialogCancel_btn, #addEditQuestionForm input[type=button], #deleteEditQuestionForm input[type=button] {
+    color:black;
+}
+
+
+#newSurveyMenuArea, #editSurveyMenuArea {
+    padding: 10px;
+    background: aliceblue;
+}
+
+#addQuestionArea, #editQuestionArea {
+    padding: 20px;
+    height: 500px;
+    overflow: auto;
+    border-radius: 10px;
+}
+
+.eachLabelArea {
+    background-color: lightblue;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+#newSurveyArea input[type=button], #surveyEditArea input[type=button] {
+    width: 80px;
+    line-height: 90px;
+    background-size: 25px;
+}
+
+#logout_btn:hover, #newSurvey_btn:hover, #showList_btn:hover, #addQuestion_btn:hover, #labelDialog_btn:hover, #deleteLabel_btn:hover, #saveSurvey_btn:hover, #deleteQuestion_btn:hover, #addLabel_btn:hover, #addLabelOption_btn:hover, #deleteLabelOption_btn:hover, #addOption_btn:hover, #deleteOption_btn:hover {
+    background-image: none;
+    color:white;
+}
+
+#saveEditSurvey_btn:hover, #addEditQuestion_btn:hover, #deleteEditQuestion_btn:hover, #editLabelDialog_btn:hover, #addEditOption_btn:hover, #deleteEditOption_btn:hover, #addEditLabel_btn:hover, #addEditLabelOption_btn:hover, #deleteEditLabelOption_btn:hover, #deleteEditLabel_btn:hover {
+    background-image: none;
+    color:white;
+}
+
+#logout_btn {
+    background-image: url("/img/logout.svg");
+}
+
+#newSurvey_btn {
+    background-image: url("/img/plus.svg");
+}
+
+#deleteLabel_btn {
+    background-image: url("/img/delete.svg");
+}
+
+#showList_btn {
+    background-image: url("/img/list.svg");
+}
+
+#addQuestion_btn {
+    background-image: url("/img/question.svg");
+}
+
+#saveSurvey_btn {
+    background-image: url("/img/save.svg");
+}
+
+#deleteQuestion_btn {
+    background-image: url("/img/delete.svg");
+}
+
+#addLabel_btn {
+    background-image: url("/img/plus.svg");
+}
+
+#labelDialog_btn {
+    background-image: url("/img/plus.svg");
+}
+
+#addLabelOption_btn {
+    background-image: url("/img/plus.svg");
+}
+
+#deleteLabelOption_btn {
+    background-image: url("/img/delete.svg");
+}
+
+#addOption_btn {
+    background-image: url("/img/plus.svg");
+}
+
+#deleteOption_btn {
+    background-image: url("/img/delete.svg");
+}
+
+#saveEditSurvey_btn {
+    background-image: url("/img/save.svg");
+}
+
+#addEditQuestion_btn {
+    background-image: url("/img/plus.svg");
+}
+
+#deleteEditQuestion_btn {
+    background-image: url("/img/delete.svg");
+}
+
+#editLabelDialog_btn {
+    background-image: url("/img/plus.svg");
+}
+
+#addEditOption_btn {
+    background-image: url("/img/plus.svg");
+}
+
+#deleteEditOption_btn {
+    background-image: url("/img/delete.svg");
+}
+
+#addEditLabel_btn {
+    background-image: url("/img/plus.svg");
+}
+
+#deleteEditLabel_btn {
+    background-image: url("/img/delete.svg");
+}
+
+#addEditLabelOption_btn {
+    background-image: url("/img/plus.svg");
+}
+
+#deleteEditLabelOption_btn {
+    background-image: url("/img/delete.svg");
+}
+
+#contentArea input[type=button] {
+    width: 35%;
+}
+
+#join_btn {
+    margin-left: 15%;
+}
+
+/* alert style */
+.alert {
+    width: 90%;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 40px;
+}
+
+.alert-success {
+    background-color: lightblue;
+    color: black;
+}
+
+.alert-warning {
+    background-color: orange;
+    color: white;
+}
+
+.alert-error {
+    background-color: darkred;
+    color: white;
+}
+
+.loginAlert, .surveyAlert {
+    border-radius: 3px;
+    margin: 3px;
+    padding: 3px;
+}
+
+#loginArea {
+    width: 80%;
+    height: 400px;
+    padding: 50px;
+}
+
+#surveyListTbl {
+    border-spacing: 0px;
+    border-collapse: collapse;
+    border: lightblue solid 1px;
+}
+
+tr, th, td {
+    border: lightblue solid 1px;
+    padding: 5px;
+}
+
+#newSurvey_btn {
+    align: right;
+    padding-right: 0px;
+    margin-bottom: 5px;
+}
+
+#addQuestion_dialog, #deleteQuestion_dialog, #shareSurvey_dialog, #addEditQuestion_dialog, #addLabel_dialog, #deleteEditQuestion_dialog, #addEditLabel_dialog {
+    display: none;
+    position:fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+#addQuestion_dialogContent, #deleteQuestion_dialogContent, #shareSurvey_dialogContent, #addEditQuestion_dialogContent, #addLabel_dialogContent, #deleteEditQuestion_dialogContent, #addEditLabel_dialogContent {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    height: 300px;
+    margin-left: -250px;
+    margin-top: -200px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+#responseLabel_dialog {
+    display: block;
+}
+
+#deleteQuestionList {
+    overflow: auto;
+    width: 400px;
+    height: 200px;
+}
+
+#addLabel_dialogContent, #addEditLabel_dialogContent {
+    height: 500px;
+}
+
+#shareSurvey_dialogContent {
+    height: 350px;
+}
+
+#shareSurvey_dialogContent input[type=text], #shareSurvey_dialogContent input[type=email] {
+    width: 80%;
+}
+
+#shareSurvey_dialogContent #shareCancel_btn {
+    margin-top: 5%;
+    margin-left: 40%;
+    background-color: lightgray;
+}
+
+#addQuestionConfirm_btn, #deleteQuestionConfirm_btn, #addLabelConfirm_btn {
+    margin-left: 30%;
+    color: white;
+}
+
+#addQuestionCancel_btn, #deleteQuestionCancel_btn, #addLabelCancel_btn {
+    background-color: lightgray;
+    color: white;
+}
+
+#addLabel_dialogContent input[type=button] {
+    width: 100px;
+}
+
+#contentArea {
+    margin-left: 20%;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 10%;
+    width: 50%;
+    height: 50%;
+    padding: 50px;
+}
+
+#menuArea {
+    margin-left: 10%;
+}
+
+hr {
+    background-color: lightblue;
+    height: 3px;
+    border: 0px;
+}
+
+.eachAnswerArea {
+    background-color: lightblue;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#question, input[name=label], input[name=question] {
+    border: 2px solid cornflowerblue;
+}
+
+table {
+    width: 100%;
+    background-color: white;
+}
+
+#addOption_btn, #deleteOption_btn, #deleteLabel_btn, #addLabelOption_btn, #deleteLabelOption_btn, #addEditOption_btn, #deleteEditOption_btn, #addEditLabelOption_btn, #deleteEditLabelOption_btn {
+    background-color: lightgray;
+}
+
+#listArea {
+    width: 80%;
+    margin-left: 10%;
+}
+
+#surveyListTbl input[type=button] {
+    width: 100%;
+}
+
+#shareCopy_btn, #shareEmail_btn {
+    width: 20%;
+}
+
+#shareLink, #emailShare {
+    margin-left: -2px;
+}
+
+#shareEmail_btn {
+    margin-bottom: 10px;
+}
+
+#responseForm input[type=checkbox], #responseForm input[type=radio] {
+    margin-left: -50px;
+}
+
+#editTitle {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#eachEditArea, .eachEditArea {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#labelArea {
+    height: 300px;
+    background-color: aliceblue;
+    overflow: auto;
+}
+
+#labelDialogConfirm_btn, #labelEditDialogConfirm_btn, #addEditQuestion_submitBtn, #deleteEditQuestionConfirm_btn {
+    margin-left: 30%;
+}
+
+#showThis {
+    display: none;
+}

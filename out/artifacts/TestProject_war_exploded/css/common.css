@@ -1,0 +1,80 @@
+@font-face {
+    src: url("./font/NanumSquareRoundB.ttf");
+    font-family: NanumSquareRoundB;
+}
+
+body {
+    background-color: aliceblue;
+    font-family: NanumSquareRoundB;
+}
+
+input {
+    font-family: NanumSquareRoundB;
+}
+
+.dialogTitle {
+    font-size: 20px;
+}
+
+input[type=button], button {
+    cursor: pointer;
+}
+
+.overDate {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* logo */
+#logo {
+    float: right;
+    width: 10%;
+}
+
+#loginLogo {
+    width: 30%;
+}
+
+/* tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 30%;
+    left: 360%;
+    margin-left: -150px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/*.tooltip .tooltiptext::after {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    top: 100%;*/
+/*    left: 50%;*/
+/*    margin-left: -5px;*/
+/*    border-width: 5px;*/
+/*    border-style: solid;*/
+/*    border-color: #555 transparent transparent transparent;*/
+/*}*/
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltipMark {
+    width: 20px;
+    padding-top: 10px;
+}
+

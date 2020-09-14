@@ -1,0 +1,136 @@
+#surveyResultForm {
+    padding: 5%;
+}
+
+#surveyInfo {
+    margin-left: 10%;
+}
+
+#title {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.eachQuestionArea {
+    background-color: white;
+    width: 70%;
+    margin-top: 2%;
+    padding: 5%;
+    border-radius: 10px;
+}
+
+.eachResultArea {
+    background-color: lightblue;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#moveToIndex {
+    width: 40%;
+    margin-left: 30%;
+    border-radius: 10px;
+    background-color: lightblue;
+    outline: none;
+    border: 0;
+    margin-top: 5%;
+    padding: 2%;
+}
+
+.answerArea {
+    border-radius: 10px;
+    background-color: lightblue;
+}
+
+.eachAnswer {
+    border-radius: 10px;
+    background-color: aliceblue;
+    padding: 5px;
+}
+#surveyInfoArea{
+    width: 70%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin-left: 10%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#wholeSurveyResultArea {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10%;
+}
+
+input[type=button] {
+    color: black;
+    margin-right: 10px;
+    border-radius: 5px;
+    width: 50px;
+    padding: 5px;
+    align: right;
+    background-color: lightblue;
+    outline: none;
+    border: 0;
+}
+
+svg {
+    margin-left: 10%;
+}
+
+.standard {
+    background-color: lightpink;
+}
+
+input[id^='standardBtn'] {
+    width: 97%;
+    height: 40px;
+    background-color: aliceblue;
+}
+
+input[name='showResult_btn'], input[name='showStat_btn'], input[name='showEachResult_btn'] {
+    width: 23%;
+    line-height: 30px;
+}
+
+input[name='showResult_btn'] {
+    margin-left: 10%;
+}
+
+#statArea {
+    height: 500px;
+    width: 80%;
+    overflow: auto;
+}
+
+.eachStatArea {
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: aliceblue;
+    padding: 10px;
+}
+
+#statDialogClose_btn {
+    width: 160px;
+    line-height: 30px;
+    margin-left: 35%;
+}
+
+#statStandard {
+    background-color: lightpink;
+}
+
+#fixedMenu {
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: fixed;
+    top: 0;
+    right: 30px;
+    background-color: lightblue;
+    width: 15%;
+}
+
+[name$='Path'] {
+    cursor: pointer;
+}

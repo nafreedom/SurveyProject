@@ -1,0 +1,116 @@
+create table members
+(
+    id varchar(30) primary key not null,
+    pw varchar(40)             not null
+);
+
+create table survey(
+    surveyNum int auto_increment primary key not null,
+    title     varchar(50)                    not null,
+    expl      varchar(100),
+    creatorId varchar(30)                    not null,
+    madeDate  Timestamp                      not null,
+    endTime   Timestamp                      not null,
+    url       varchar(450)                   not null
+);
+
+create table survey_question
+(
+    questionSeq     int auto_increment primary key not null,
+    surveyNum       int                            not null,
+    questionNum     int                            not null,
+    questionType    varchar(20)                    not null,
+    questionValue   varchar(100)                   not null,
+    filePath        text,
+    extInfo         text
+);
+
+
+create table survey_option
+(
+    questionSeq int          not null,
+    questionNum int          not null,
+    optionNum   int          not null,
+    optionValue varchar(100) not null
+);
+
+create table survey_result (
+    resultSeq   int not null,
+    surveyNum   int          not null,
+    questionNum int          not null,
+    answerValue varchar(100) not null,
+    filePath    text,
+    ipAddr      varchar(100) not null,
+    email       varchar(255)
+);
+
+create table label (
+    labelSeq        int auto_increment primary key not null,
+    surveyNum       int not null,
+    labelNum        int not null,
+    labelName       varchar(100) not null,
+    labelNickname   varchar(100)
+);
+
+create table label_option(
+    labelSeq            int not null,
+    labelOptionNum      int not null,
+    labelOptionValue    varchar(100) not null
+);
+
+create table label_result (
+    resultSeq int not null,
+    labelNum int not null,
+    labelOptionNum int not null
+);
+
+create table survey_form(
+    surveyFormNum	int auto_increment primary key not null,
+    title	        varchar(50) not null,
+    expl	        varchar(100) not null,
+    type            varchar(50)
+);
+
+
+create table survey_form_question(
+    questionSeq	    int auto_increment primary key not null,
+    surveyFormNum	int not null,
+    questionNum	    int not null,
+    questionType	varchar(64) not null,
+    questionValue   varchar(255) not null,
+    filePath        text,
+    extInfo         text
+);
+
+create table survey_form_option(
+    questionSeq	    int not null,
+    questionNum	    int not null,
+    optionNum	    int not null,
+    optionValue     varchar(255) not null
+);
+
+create table survey_setting(
+    surveyNum	        int not null,
+    answerTimeLimit	    int(1) not null,
+    emailCollect	    int(1) not null,
+    editAfterAnswer	    int(1) not null,
+    captcha		        int(1) not null
+);
+
+create table survey_setting (
+	surveyNum	        int not null,
+	answerTimeLimit	    int(1) not null DEFAULT 0,
+	emailCollect	    int(1) not null DEFAULT 0,
+	emailOpen   	    int(1) not null DEFAULT 0,
+	editAfterAnswer	    int(1) not null DEFAULT 0,
+	captcha		        int(1) not null DEFAULT 0
+);
+
+create table survey_setting_send_email (
+	surveyNum	        int not null,
+	email VARCHAR(255) NOT NULL,
+	PASSWORD VARCHAR(10) NOT NULL,
+	UNIQUE KEY(surveyNum, email)
+);
+
+show tables;
