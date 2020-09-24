@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Connector
-        relaxedQueryChars="[,]"
-/>
+<Context>
+    <Resource name="jdbc_conn"
+              auth="Container"
+              type="javax.sql.DataSource"
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://172.30.7.77:3306/poll?useSSL=false"
+              username="mina"
+              password="willrain12"
+              loginTimeout="10"
+              maxWait="5000"
+              testOnBorrow="true"
+              maxActive="500"
+              maxIdle="100"
+              removeAbandoned = "true"
+    />
+</Context>

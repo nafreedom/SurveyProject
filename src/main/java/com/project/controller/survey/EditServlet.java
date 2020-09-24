@@ -20,7 +20,7 @@ public class EditServlet extends HttpServlet {
         System.out.println("in editservlet");
 
         int surveyNum = Integer.parseInt(request.getParameter("surveyNum"));
-        System.out.println("surveyNum in editServlet : " + surveyNum);
+        System.out.println(" surveyNum in editServlet : " + surveyNum);
 
         JSONObject jsonObject = null;
 

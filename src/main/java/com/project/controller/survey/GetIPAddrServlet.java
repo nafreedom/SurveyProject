@@ -77,7 +77,7 @@ public class GetIPAddrServlet extends HttpServlet {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select * from survey_result where surveyNum=? AND ipAddr=?";
             pstmt = conn.prepareStatement(sql);

@@ -1,34 +1,36 @@
 package com.project.dao;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
 import java.io.FileReader;
 import java.sql.*;
 import java.util.Properties;
 
 public class DBConnector {
+    private DataSource dataSource;
+    private Connection connection = null;
+
     private static DBConnector dbConnector = new DBConnector();
-    Connection connection = null;
 
     public static DBConnector getInstance() {return dbConnector; }
 
-    public Connection dbConnect () throws Exception {
-        try {
-            FileReader resources = new FileReader("C:\\Users\\User\\IdeaProjects\\SurveyProject\\src\\main\\resources\\config\\db.properties");
-            Properties properties = new Properties();
-            properties.load(resources);
-
-            String dbClass = properties.getProperty("dbClass");
-            String database = properties.getProperty("database");
-            String user = properties.getProperty("user");
-            String password = properties.getProperty("password");
-
-            //System.out.println("database addr : " + database);
-            //System.out.println("database : "+dbClass+database+user+password);
-
-            Class.forName(dbClass);
-            connection = DriverManager.getConnection(database, user, password);
-        } catch (Exception e) {
+    public DBConnector(){
+        try{
+            Context context = new InitialContext();
+            dataSource = (DataSource)context.lookup("java:comp/env/jdbc_conn");
+        }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public Connection getDBConnection() throws Exception{
+        try{
+            connection = dataSource.getConnection();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         return connection;
     }
 

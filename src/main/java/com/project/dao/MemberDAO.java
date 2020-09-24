@@ -14,6 +14,7 @@ import java.util.Properties;
 
 public class MemberDAO {
     private static MemberDAO _instance = new MemberDAO();
+
     DBConnector dbConnector = null;
     Connection conn = null;
     PreparedStatement pstmt = null;
@@ -26,7 +27,7 @@ public class MemberDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             String sql = "select id from members where id = ?";
 
@@ -59,7 +60,7 @@ public class MemberDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             String sql = "select id, pw from members where id = ? AND pw = ?";
             pstmt = conn.prepareStatement(sql);

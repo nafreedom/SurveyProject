@@ -6,6 +6,10 @@ import com.project.vo.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+import javax.xml.crypto.Data;
 import java.io.UnsupportedEncodingException;
 import java.sql.*;
 import java.util.ArrayList;
@@ -15,13 +19,14 @@ import java.util.Properties;
 
 public class SurveyDAO {
     private static SurveyDAO _instance = new SurveyDAO();
-    DBConnector dbConnector = null;
+
+    DBConnector dbConnector = new DBConnector();
     Connection conn = null;
     PreparedStatement pstmt = null;
 
-    ResultSet rs = null;
-    ResultSet _rs = null;
-    ResultSet __rs = null;
+    ResultSet rs = null,
+            _rs = null,
+            __rs = null;
 
     String sql = "",
             _sql = "",
@@ -33,8 +38,7 @@ public class SurveyDAO {
         int surveyNum = 0;
 
         try {
-            dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "insert into SURVEY(title, expl, creatorId, madeDate, endTime, url) values (?, ?, ?, ?, ?, ?)";
             pstmt = conn.prepareStatement(sql);
@@ -69,7 +73,7 @@ public class SurveyDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "insert into survey_question(surveyNum, questionNum, questionType, questionValue, extInfo) values (?, ?, ?, ?, ?)";
             pstmt = conn.prepareStatement(sql);
@@ -101,7 +105,7 @@ public class SurveyDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "insert into survey_option(questionSeq, questionNum, optionNum, optionValue) values(?, ?, ?, ?)";
             pstmt = conn.prepareStatement(sql);
@@ -125,7 +129,7 @@ public class SurveyDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "insert into LABEL(surveyNum, labelNum, labelName, labelNickname) values (?, ?, ?, ?)";
             pstmt = conn.prepareStatement(sql);
@@ -158,7 +162,7 @@ public class SurveyDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "insert into label_option(labelSeq, labelOptionNum,labelOptionValue) values(?, ?, ?)";
             pstmt = conn.prepareStatement(sql);
@@ -183,7 +187,7 @@ public class SurveyDAO {
         System.out.println("id in chkDuplicateSurvey : " + creatorId);
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select surveyNum from SURVEY where title=? and creatorId=?";
             pstmt = conn.prepareStatement(sql);
@@ -216,7 +220,7 @@ public class SurveyDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select surveyNum from survey where creatorId=? and title=?";
             pstmt = conn.prepareStatement(sql);
@@ -253,7 +257,7 @@ public class SurveyDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select count(*) as questionCnt from survey_question where surveyNum=?";
             pstmt = conn.prepareStatement(sql);
@@ -365,7 +369,7 @@ public class SurveyDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "delete from survey where surveyNum=?";
             pstmt = conn.prepareStatement(sql);
@@ -436,7 +440,7 @@ public class SurveyDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select title, madeDate, endTime, surveyNum from survey where creatorId=?";
             pstmt = conn.prepareStatement(sql);
@@ -502,7 +506,7 @@ public class SurveyDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select url from survey where creatorId=? AND title=?";
             pstmt = conn.prepareStatement(sql);
@@ -529,7 +533,7 @@ public class SurveyDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select surveyNum from survey where creatorId=? AND title=?";
             pstmt = conn.prepareStatement(sql);
@@ -553,7 +557,7 @@ public class SurveyDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select resultSeq from survey_result order by resultSeq desc limit 1";
             pstmt = conn.prepareStatement(sql);
@@ -581,7 +585,7 @@ public class SurveyDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "insert into survey_result(resultSeq, surveyNum, questionNum, answerValue, filePath, ipAddr, email) values(?,?,?,?,?,?,?)";
             pstmt = conn.prepareStatement(sql);
@@ -607,7 +611,7 @@ public class SurveyDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "delete from survey_result where surveyNum=?";
             pstmt = conn.prepareStatement(sql);
@@ -628,7 +632,7 @@ public class SurveyDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select resultSeq from survey_result where surveyNum=?";
             pstmt = conn.prepareStatement(sql);
@@ -658,7 +662,7 @@ public class SurveyDAO {
         int labelCnt = 0;
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select count(*) as labelCnt from label where surveyNum=?";
             pstmt = conn.prepareStatement(sql);
@@ -682,7 +686,7 @@ public class SurveyDAO {
         int eachLabelResponseCnt = 0;
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select count(*) as eachLabelResponseCnt from label_result "
                     + "where resultSeq in ("
@@ -710,7 +714,7 @@ public class SurveyDAO {
         int eachLabelOptionResponseCnt = 0;
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select count(*) as eachLabelOptionResponseCnt from label_result "
                     + "where resultSeq in ("
@@ -738,7 +742,7 @@ public class SurveyDAO {
         int labelSeq = 0;
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select labelSeq from label where surveyNum=? AND labelNum=?";
             pstmt = conn.prepareStatement(sql);
@@ -761,7 +765,7 @@ public class SurveyDAO {
         String labelName = "";
         try{
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select labelName from label where labelSeq=?";
             pstmt = conn.prepareStatement(sql);
@@ -782,7 +786,7 @@ public class SurveyDAO {
         String labelNickname = "";
         try{
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select labelNickname from label where labelSeq=?";
             pstmt = conn.prepareStatement(sql);
@@ -804,7 +808,7 @@ public class SurveyDAO {
         int labelOptionCnt = 0;
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select count(*) as labelOptionCnt from label_option where labelSeq=?";
             pstmt = conn.prepareStatement(sql);
@@ -828,7 +832,7 @@ public class SurveyDAO {
         String labelOptionValue = "";
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select labelOptionValue from label_option JOIN label "
                     + "where label.labelSeq=label_option.labelSeq "
@@ -856,7 +860,7 @@ public class SurveyDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select count(*) as responseCnt from (select count(*) from survey_result where surveyNum=? group by resultSeq) as cnt";
             pstmt = conn.prepareStatement(sql);
@@ -879,7 +883,7 @@ public class SurveyDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select endTime from survey where surveyNum=?";
             pstmt = conn.prepareStatement(sql);
@@ -905,7 +909,7 @@ public class SurveyDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select madeDate from survey where surveyNum=?";
             pstmt = conn.prepareStatement(sql);
@@ -962,7 +966,7 @@ public class SurveyDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select count(*) as questionCnt from survey_question where surveyNum=?";
             pstmt = conn.prepareStatement(sql);
@@ -1280,7 +1284,7 @@ public class SurveyDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select count(*) as labelCnt from label where surveyNum=?";
             pstmt = conn.prepareStatement(sql);
@@ -1364,7 +1368,7 @@ public class SurveyDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql= "insert into label_result(resultSeq, labelNum, labelOptionNum) values(?, ?, ?)";
             pstmt = conn.prepareStatement(sql);
@@ -1385,7 +1389,7 @@ public class SurveyDAO {
 
         try{
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "SELECT surveyFormNum, title, expl, type FROM survey_form";
             pstmt = conn.prepareStatement(sql);
@@ -1428,7 +1432,7 @@ public class SurveyDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select count(*) as questionCnt from survey_form_question where surveyFormNum=?";
             pstmt = conn.prepareStatement(sql);
@@ -1511,7 +1515,7 @@ public class SurveyDAO {
 
         try {
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "insert into survey_setting (surveyNum, emailCollect, emailOpen) values (?, ?, ?)";
             pstmt = conn.prepareStatement(sql);
@@ -1539,7 +1543,7 @@ public class SurveyDAO {
 
         try{
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "select surveyNum from survey where creatorId=? AND title=?";
             pstmt = conn.prepareStatement(sql);
@@ -1580,7 +1584,7 @@ public class SurveyDAO {
 
         try{
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "INSERT INTO survey_setting_send_email (surveyNum, email, password) VALUES(?,?,?)" +
                     "ON DUPLICATE KEY UPDATE password = ?";
@@ -1606,7 +1610,7 @@ public class SurveyDAO {
 
         try{
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             sql = "SELECT count(surveyNum) as count FROM survey_setting_send_email where surveyNum = ? and email = ? and password = ?";
             pstmt = conn.prepareStatement(sql);
@@ -1640,7 +1644,7 @@ public class SurveyDAO {
 
         try{
             dbConnector = DBConnector.getInstance();
-            conn = dbConnector.dbConnect();
+            conn = dbConnector.getDBConnection();
 
             //1. get emailOpenYn
             int emailOpenYN = SurveyConstants.YN_N;
